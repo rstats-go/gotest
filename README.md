@@ -1,4 +1,27 @@
 
+
+## Example
+
+```
+romain@sherlock ~/git $ R CMD INSTALL gotest
+* installing to library ‘/Library/Frameworks/R.framework/Versions/3.4/Resources/library’
+* installing *source* package ‘gotest’ ...
+** libs
+GOPATH=/Users/romain/git/gotest/src/.. go build -o gotest.so -buildmode=c-shared gotest
+installing to /Library/Frameworks/R.framework/Versions/3.4/Resources/library/gotest/libs
+** R
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+* DONE (gotest)
+romain@sherlock ~/git $ Rscript -e "gotest::godouble(21L)"
+[1] 42
+```
+
+## Not quite there yet
+
 This is an attempt to use `go` code in `src/` directory of an R package. 
 
 Instead of building the shared library as usual, I'm using `go build` with `-buildmode=c-shared` in the `Makevars` : 
