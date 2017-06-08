@@ -5,11 +5,6 @@
 /* Start of preamble from import "C" comments.  */
 
 
-#line 3 "/Users/romain/git/gotest/src/gotest/gotest.go"
-
-
-
-#line 1 "cgo-generated-wrapper"
 
 
 /* End of preamble from import "C" comments.  */
