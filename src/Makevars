@@ -1,7 +1,7 @@
 .PHONY: go
 
-CGO_CFLAGS = "-I/Library/Frameworks/R.framework/Resources/include -DNDEBUG -I/usr/local/include"
-CGO_LDFLAGS = "$(SHLIB_LDFLAGS) -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib"
+CGO_CFLAGS = "$(ALL_CPPFLAGS)"
+CGO_LDFLAGS = "$(ALL_LIBS)"
 
 go:
 	CGO_CFLAGS=$(CGO_CFLAGS) CGO_LDFLAGS=$(CGO_LDFLAGS) GOPATH=$(shell pwd)/.. go build -o $(SHLIB) -x -buildmode=c-shared gotest
