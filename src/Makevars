@@ -1,0 +1,8 @@
+.PHONY: go
+
+go:
+	GOPATH=$(shell pwd)/.. go build -o $(SHLIB) -buildmode=c-shared gotest
+
+clean:
+	rm gotest.h
+	rm gotest.so

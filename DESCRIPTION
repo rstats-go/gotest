@@ -1,0 +1,10 @@
+Package: gotest
+Type: Package
+Title: Trying to use go in R packages
+Version: 0.1.0
+Authors@R: c( person( "Romain", "Francois", email = "romain@thinkr.fr", role = c("aut", "cre")) )
+Description: Trying to use go in R packages. 
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1.9000
+License: MIT + file LICENSE
