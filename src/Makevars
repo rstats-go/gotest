@@ -1,8 +1,9 @@
 .PHONY: go
 
-go:
-	CGO_CFLAGS="$(ALL_CPPFLAGS)" CGO_LDFLAGS="$(ALL_LIBS)" GOPATH=$(shell pwd)/.. go build -o $(SHLIB) -x -buildmode=c-shared gotest
+CGO_CFLAGS = "$(ALL_CPPFLAGS)"
+CGO_LDFLAGS = "$(PKG_LIBS) $(SHLIB_LIBADD) $(LIBR)"
+GOPATH = $(CURDIR)/go
 
-clean:
-	rm gotest.h
-	rm gotest.so
+go:
+	rm -f gotest.h
+	CGO_CFLAGS=$(CGO_CFLAGS) CGO_LDFLAGS=$(CGO_LDFLAGS) GOPATH=$(GOPATH)  go build -o $(SHLIB) -x -buildmode=c-shared main
